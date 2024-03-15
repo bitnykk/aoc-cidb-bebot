@@ -1,0 +1,43 @@
+AoC Items API for BEBOT
+      ////////
+    ////@@@///
+   //@@@@@@@@@//
+ ///@@///////@@///
+/({/@@/(o/o)/@@/})/
+ ///@@///////@@///
+   //@@@@@@@@@//
+     ///@@@////
+      ///////
+
+This is an AoC API aimed to provide Bebots !items commands interactivity.
+
+If you don't want to host your own copy, you can use Bebot's default settings.
+Otherwise you'll need Apache/PHP + Bebot & its SQL DataBase to make this work properly.
+Once your Bebot & Apache run fine, just edit local init.php accordingly to created DB.
+Then execute this script just once to initialize its following "itemdb_..." tables :
+_bots
+ Which is remembering allowed bot(s) with respective Passkey
+_items
+ Which records added items from various ingame requests
+_recipes
+ Which links various items to remind existing recipes
+_recipe_crafters
+ Which reminds which player shares recipe datas
+Finally, insert (manually or by PhpMyAdmin) pairs of Botname with Passkey in _bots table.
+
+The API consists of the 4 following "itemdb_..." pathes :
+_botrecipesearch
+ Which allows you to search among recipes stored in the DB
+_botrecipesubmit
+ Which lets you add some recipes in the DB (if not known already)
+_botsearch
+ Which welcomes you to search among items stored in the DB
+_botsubmit
+ Which permits you add some items in the DB (if not known already)
+
+Now you'd just have to set your bot up to start feeding your DB from ingame.
+Settings are detailed here http://wiki.bebot.link/index.php/Items.php
+ 
+Provided by MeatHooks from Crom
+Recoded by Bitnykk for Bebot.link
+Source github.com/bitnykk/aoc-cidb-bebot
