@@ -23,7 +23,7 @@ $itemqty		= request_var("itemqty", "");
 
 $checksum	= request_var("checksum", "");
 
-if ($username == "" || $botname == "" || $guildname == "" || $recipelowid == "" || $recipehighid == "" || $recipeqty == "" || $itemlowid == "" || $itemhighid == "" || $itemqty == "" || $checksum == "")
+if ($username == "" || $botname == "" || $recipelowid == "" || $recipehighid == "" || $recipeqty == "" || $itemlowid == "" || $itemhighid == "" || $itemqty == "" || $checksum == "")
 {
 	echo "Invalid Parameters Specified";
 }

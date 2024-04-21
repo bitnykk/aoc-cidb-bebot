@@ -26,7 +26,7 @@ $color		= request_var("color", "");
 
 $checksum	= request_var("checksum", "");
 
-if ($username == "" || $botname == "" || $guildname == "" || $name == "" || $lowid == "" || $highid == "" || $lowlvl == "" || $highlvl == "" || $lowcrc == "" || $midcrc == "" || $highcrc == "" || $color == "" || $checksum == "")
+if ($username == "" || $botname == "" || $name == "" || $lowid == "" || $highid == "" || $lowlvl == "" || $highlvl == "" || $lowcrc == "" || $midcrc == "" || $highcrc == "" || $color == "" || $checksum == "")
 {
 	echo "Invalid Parameters Specified";
 }
@@ -42,7 +42,7 @@ else
 
 	if ($checksum != $new_checksum)
 	{
-		echo "Checksum Failed, unable to process the item submittion.";
+		echo "Checksum Failed, unable to process the item submission.";
 	}
 	else
 	{
