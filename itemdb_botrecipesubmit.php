@@ -42,9 +42,13 @@ else
 	}
 	else
 	{
-		$sql =	'INSERT INTO itemdb_recipe_crafters (ToonName, BotName, GuildName, LowID, HighID, InsertOn) VALUES (?, ?, ?, ?, ?, ?)';
-		$mm_db->sql_query_parms($sql, array($username, $botname, $guildname, $recipelowid, $recipehighid, date('Y-m-d H:i:s')));
-
+		$sql =	'SELECT ToonName, LowID, HighID FROM itemdb_recipe_crafters WHERE ToonName = ? and LowID = ? and HighID = ?';
+		$result = $mm_db->sql_query_parms($sql, array($username, $recipelowid, $recipehighid));
+		if(count($result) == 0) {		
+			$sql =	'INSERT INTO itemdb_recipe_crafters (ToonName, BotName, GuildName, LowID, HighID, InsertOn) VALUES (?, ?, ?, ?, ?, ?)';
+			$mm_db->sql_query_parms($sql, array($username, $botname, $guildname, $recipelowid, $recipehighid, date('Y-m-d H:i:s')));
+		}
+		
 		$sql =	'SELECT InsertOn FROM itemdb_recipes WHERE LowID = ? and HighID = ? and Item_LowID = ? and Item_HighID = ?';
 		$result = $mm_db->sql_query_parms($sql, array($recipelowid, $recipehighid, $itemlowid, $itemhighid));
 		if(count($result) > 0) 
